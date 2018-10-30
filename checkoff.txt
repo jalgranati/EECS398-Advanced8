@@ -1,0 +1,8 @@
+Which coverage tool did you use, why?
+coverage.py
+
+What did you have to do to get the automatic integration working?
+coverage run project.py
+coverage report
+
+
