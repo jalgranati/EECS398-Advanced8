@@ -1,31 +1,36 @@
 #!/usr/bin/env python3
+
+import operator
 import readline
 
-op = {
+
+operators = {
     '+': operator.add,
     '-': operator.sub,
     '*': operator.mul,
-    '/': operator.floordiv,
+    '/': operator.truediv,
 }
 
-def calculate(arg):
-    stack = arg.split()
-    while len(stack) > 1:
-        token = stack.pop()
+def calculate(myarg):
+    stack = list()
+    for token in myarg.split():
         try:
-            value = int(token)
-            stack.append(value)
+            token = int(token)
+            stack.append(token)
         except ValueError:
-            val2 = int(stack.pop())
-            val1 = int(stack.pop())
+            function = operators[token]
+            arg2 = stack.pop()
+            arg1 = stack.pop()
+            result = function(arg1, arg2)
+            stack.append(result)
+        print(stack)
+    if len(stack) != 1:
+        raise TypeError("Too many parameters")
+    return stack.pop()
 
-            func = op[token]
-            result = func(val1,val2)
-            stack.append(str(result))
-    return int(stack[0])
 def main():
     while True:
-        result = calculate(input("rpn calc> "))
+        result = calculate(raw_input("rpn calc> "))
         if result > 0:
             print(Fore.green + str(result))
         elif result < 0:
@@ -35,3 +40,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
