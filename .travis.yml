@@ -11,4 +11,4 @@ after_success:
   - coverage report > report.txt
   - git add report.txt
   - git commit -m "Coverage"
-  - git push
+  - git push origin HEAD:github
