@@ -2,6 +2,7 @@
 
 import operator
 import readline
+#from termcolor import colored
 
 
 operators = {
@@ -32,9 +33,9 @@ def main():
     while True:
         result = calculate(raw_input("rpn calc> "))
         if result > 0:
-            print(Fore.green + str(result))
+            print(colored(str(result), "green"))
         elif result < 0:
-            print(Fore.red + str(result))
+            print(colored(str(result), "red"))
         else:
             print(result)
 
