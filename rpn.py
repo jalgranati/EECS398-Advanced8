@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import readline
-import operator
-from colorama import Fore, Back, Style
+
 op = {
     '+': operator.add,
     '-': operator.sub,
