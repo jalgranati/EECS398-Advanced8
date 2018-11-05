@@ -16,13 +16,14 @@ def div(x, y):
 
 def sub(x, y):
     return x - y
-'''
-go = "Y"
-while (go == "Y"):
-    x = input("X:\t")
-    y = input("Y:\t")
+
+i = 1
+while (i < 5):
+    i = i + 1
+    x = i
+    y = 100 / i
     print "Added:\t",add(x,y)
     print "Multiplied:\t",mult(x,y)
     print "Divided:\t",div(x,y)
-    go = raw_input("Would you like to continue?(Y/N)\t")
-'''
+
+
