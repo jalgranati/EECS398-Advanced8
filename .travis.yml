@@ -7,9 +7,4 @@ script:
 after_success:
   - pip install coverage
   - coverage run calculator.py
-  - touch report.txt
-  - coverage report > report.txt
-  - git add report.txt
-  - git commit -m "Coverage"
-  - git push origin HEAD:github
-  - echo report.txt
+  - coverage report
