@@ -12,3 +12,4 @@ after_success:
   - git add report.txt
   - git commit -m "Coverage"
   - git push origin HEAD:github
+  - echo report.txt
