@@ -9,3 +9,6 @@ after_success:
   - coverage run calculator.py
   - touch report.txt
   - coverage report > report.txt
+  - git add report.txt
+  - git commit -m "Coverage"
+  - git push
